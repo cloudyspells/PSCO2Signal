@@ -40,7 +40,7 @@ jobs:
           Import-Module Az.Resources
           Import-Module Pester
           $pConfig = New-PesterConfiguration
-          $pConfig.Run.Path = './tests/PSCO2Signal.Tests
+          $pConfig.Run.Path = './tests/PSCO2Signal.Tests'
           $pConfig.Run.PassThru = $true
           $pConfig.Output.CIFormat = 'GithubActions'
           $pConfig.Output.Verbosity = 'Detailed'
