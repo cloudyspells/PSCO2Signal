@@ -40,7 +40,7 @@ Describe "Get-CO2SignalBestAzureRegion.Tests" {
         }
     }
 
-    Context " Get-PSCO2SignalBestAzureRegion with pipeline parameters" {
+    Context " Get-CO2SignalBestAzureRegion with pipeline parameters" {
         BeforeAll {
             $testCase = "westeurope","northeurope","eastus" | Get-CO2SignalBestAzureRegion -AuthToken $env:SIGNALTOKEN
         }
