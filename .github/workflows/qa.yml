@@ -89,7 +89,7 @@ jobs:
       - name: Echo region from action
         run: |
           echo 'Best emissions region: ${{ steps.signal_action.outputs.region }}'
-          echo 'Best emissions percent: ${{ steps.signal_action.outputs.percent }}'
+          echo 'Best emissions fossil fuel percent: ${{ steps.signal_action.outputs.fossilFuelPercentage }}'
       - name: Upload test results
         uses: actions/upload-artifact@v3
         with:
