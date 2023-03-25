@@ -29,7 +29,7 @@ Describe "Get-CO2SignalBestAzureRegion.Tests" {
             $testCase.CarbonIntensityUnit | Should -BeOfType System.String
             $testCase.FossilFuelPercentage | Should -BeOfType System.Double
             $testCase.Region | Should -BeOfType System.String
-            $testCase.CountryCode | Should -BeOfType Sytem.String
+            $testCase.CountryCode | Should -BeOfType System.String
         }
 
         It " Should return a result with the correct property values" {
