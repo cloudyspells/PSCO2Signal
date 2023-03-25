@@ -33,7 +33,7 @@ jobs:
       - name: Run Pester tests
         shell: pwsh
         env:
-          SINGALTOKEN: ${{ secrets.SIGNALTOKEN }}
+          SIGNALTOKEN: ${{ secrets.SIGNALTOKEN }}
         run: |
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module Az.Resources
