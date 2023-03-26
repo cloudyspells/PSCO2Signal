@@ -12,7 +12,7 @@
     RootModule = 'PSCO2Signal.psm1'
     
     # Version number of this module.
-    ModuleVersion = '0.9.0.0'
+    ModuleVersion = '1.0.0.0'
     
     # Supported PSEditions
     # CompatiblePSEditions = @()
