@@ -1,5 +1,6 @@
 name: 'PSCO2Signal for Azure regions'
 description: 'Get Azure region with optimal carbon emissions from a given set'
+author: 'Roderick Bant'
 branding:
   icon: 'loader'
   color: 'green'
