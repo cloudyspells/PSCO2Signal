@@ -123,7 +123,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           scope: subscription
-          region: ${{ steps.signal_action.outputs.region }} # The region output from PSCO2SSignal
+          region: ${{ steps.signal_action.outputs.region }} # The region output from PSCO2Signal
           template: src/bicep/main.bicep
 ```
 
