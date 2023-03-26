@@ -18,10 +18,10 @@
     "westeurope" | Get-CO2SignalForAzureRegion -AuthToken $token
 
     .NOTES
-    You will need to register an account for an API token from https://www.co2signal.com/ to use this function.
+    You will need to register an account for an API token from https://www.co2signal.com/ to use this function. You will also need a connected Azure PowerShell session.
 
     .LINK
-    https://github.com/cloudyspells/PSCO2Signal/blob/main/docs/Get-CO2SignalForAzureRegion.md
+    https://github.com/cloudyspells/PSCO2Signal/wiki/Get-CO2SignalForAzureRegion
 
     .LINK
     https://docs.co2signal.com/#get-latest-by-geographic-coordinate

@@ -21,7 +21,7 @@
     You will need to register an account for an API token from https://www.co2signal.com/ to use this function.
 
     .LINK
-    https://github.com/cloudyspells/PSCO2Signal/blob/main/docs/Get-CO2SignalBestAzureRegion.md
+    https://github.com/cloudyspells/PSCO2Signal/wiki/Get-CO2SignalBestAzureRegion
 
     .LINK
     https://docs.co2signal.com/#get-latest-by-geographic-coordinate
@@ -41,6 +41,8 @@
     - FossilFuelPercentage: The percentage of fossil fuel used to generate electricity.
     - Region: The Azure Region.
     - CountryCode: The country location code from CO2 Signal.
+
+    
 #>
 function Get-CO2SignalBestAzureRegion {
     [CmdletBinding()]

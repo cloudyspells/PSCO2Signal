@@ -74,10 +74,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### - CountryCode: The country location code from CO2 Signal.
 ## NOTES
 You will need to register an account for an API token from https://www.co2signal.com/ to use this function.
+You will also need a connected Azure PowerShell session.
 
 ## RELATED LINKS
 
-[https://github.com/cloudyspells/PSCO2Signal/blob/main/docs/Get-CO2SignalForAzureRegion.md](https://github.com/cloudyspells/PSCO2Signal/blob/main/docs/Get-CO2SignalForAzureRegion.md)
+[https://github.com/cloudyspells/PSCO2Signal/wiki/Get-CO2SignalForAzureRegion](https://github.com/cloudyspells/PSCO2Signal/wiki/Get-CO2SignalForAzureRegion)
 
 [https://docs.co2signal.com/#get-latest-by-geographic-coordinate](https://docs.co2signal.com/#get-latest-by-geographic-coordinate)
 
