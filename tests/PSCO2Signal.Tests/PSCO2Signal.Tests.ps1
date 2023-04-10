@@ -8,7 +8,7 @@ Describe "PSCO2Signal.Tests" {
         BeforeAll {
             $getModule = Get-Module -Name PSCO2Signal
         }
-        
+
         It " Should have a valid module manifest" {
             $getModule | Should -Not -BeNullOrEmpty
             $getModule | Should -BeOfType 'System.Management.Automation.PSModuleInfo'
@@ -16,5 +16,5 @@ Describe "PSCO2Signal.Tests" {
             $getModule.Version | Should -Match "^\d+\.\d+\.\d+\.\d+$"
             $getModule.GUID | Should -Not -BeNullOrEmpty
         }
-    }   
+    }
 }

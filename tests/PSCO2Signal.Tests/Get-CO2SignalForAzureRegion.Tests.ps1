@@ -65,8 +65,6 @@ Describe "Get-CO2SignalForAzureRegion.Tests" {
         It " Should return a result with a region property of value 'westeurope'" {
             $testCase.Region | Should -Be "westeurope"
         }
-        
-        
     }
 
     Context " Get-CO2SignalForAzureRegion with pipeline parameters" {
