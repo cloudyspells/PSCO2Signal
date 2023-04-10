@@ -90,7 +90,7 @@ jobs:
         if: always()
         with:
           files: |
-            tests/**/*.xml
+            tests/junit.xml
             
       - name: Test the Module Manifest
         shell: pwsh
