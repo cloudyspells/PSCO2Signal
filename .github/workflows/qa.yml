@@ -7,6 +7,11 @@ on:
       - 'main'
       - 'releases/**'
 
+permissions:
+  checks: write
+  pull-requests: write
+  security-events: write # Allows the action to create a security event for the SARIF upload
+
 name: PowerShell Module Quality Assurance
 
 jobs:
@@ -30,9 +35,12 @@ jobs:
           output: results.sarif
           excludeRule: '"PSAvoidUsingPlainTextForPassword"'
 
-      - name: Create output dir for 'JaCoCo' code coverage
-        run: mkdir -p ./build/reports/jacoco
-          
+      - name: Upload PSScriptAnalyzer SARIF results
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: results.sarif
+
       - name: Run Pester tests
         shell: pwsh
         env:
@@ -52,7 +60,7 @@ jobs:
           $pConfig.TestResult.Enabled = $true
           $pConfig.CodeCoverage.Enabled = $true
           $pConfig.CodeCoverage.OutputFormat = 'JaCoCo'
-          $pConfig.CodeCoverage.OutputPath = './build/reports/jacoco/coverage.xml'
+          $pConfig.CodeCoverage.OutputPath = './tests/coverage.xml'
           $pConfig.CodeCoverage.Path = './src/PSCO2Signal/PSCO2Signal.psm1'
           $p = Invoke-Pester -Configuration $pConfig
           Write-Output "## Pester Test Results" >> $env:GITHUB_STEP_SUMMARY
@@ -78,12 +86,13 @@ jobs:
           } >> $env:GITHUB_STEP_SUMMARY
           Write-Output "" >> $env:GITHUB_STEP_SUMMARY
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+      - name: Publish Pester Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: always()
+        with:
+          files: |
+            tests/junit.xml
+            
       - name: Test the Module Manifest
         shell: pwsh
         run: Test-ModuleManifest -Path ./src/PSCO2Signal/PSCO2Signal.psd1

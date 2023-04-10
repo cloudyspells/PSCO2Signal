@@ -79,8 +79,8 @@ function Get-CO2SignalForAzureRegion {
     Write-Verbose "Calling CO2 Signal API: $uri"
     $response = Invoke-RestMethod -Uri $uri -Headers $headers -Method Get -ContentType "application/json"
     Write-Verbose "CO2 Signal API response: $response"
-    return New-Object psobject -Property @{ 
-        CarbonIntensity = $response.data.carbonIntensity 
+    return New-Object psobject -Property @{
+        CarbonIntensity = $response.data.carbonIntensity
         CarbonIntensityUnit = $response.units.carbonIntensity
         FossilFuelPercentage = $response.data.fossilFuelPercentage
         Region = $Region

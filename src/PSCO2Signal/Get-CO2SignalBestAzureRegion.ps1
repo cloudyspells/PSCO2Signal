@@ -41,8 +41,6 @@
     - FossilFuelPercentage: The percentage of fossil fuel used to generate electricity.
     - Region: The Azure Region.
     - CountryCode: The country location code from CO2 Signal.
-
-    
 #>
 function Get-CO2SignalBestAzureRegion {
     [CmdletBinding()]
