@@ -10,6 +10,7 @@ on:
 permissions:
   checks: write
   pull-requests: write
+  security-events: write # Allows the action to create a security event for the SARIF upload
 
 name: PowerShell Module Quality Assurance
 
