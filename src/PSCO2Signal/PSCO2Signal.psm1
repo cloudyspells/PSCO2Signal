@@ -1,6 +1,6 @@
 #Requires -Modules Az.Resources
 $context = Get-AzContext
-if ($context -eq $null) {
+if ($null -eq $context) {
     throw "You must be logged in to Azure to use this module."
 }
 
