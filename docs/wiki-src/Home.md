@@ -9,7 +9,6 @@ PowerShell module for [co2signal.com](https://www.co2signal.com/) API
 ![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSCO2Signal)
 ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PSCO2Signal)
 
-
 This PowerShell module is intended for retrieving emissions data from
 [CO2signal](https://www.co2signal.com/) for a supplied Azure Region during
 resource deployments. This is a lightweight solution making use of only the

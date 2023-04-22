@@ -12,19 +12,19 @@ Once you have an account, you will need to create an API token. This can be done
 
 The module is available on the [PowerShell Gallery](https://www.powershellgallery.com/packages/PSCO2Signal/). You can install it using the following command:
 
-```powershell
-Install-Module -Name PSCO2Signal
+```console
+PS C:\> Install-Module -Name PSCO2Signal
 ```
 
 Once installed, you can import the module using the following command:
 
-```powershell
-Import-Module -Name PSCO2Signal
+```console
+PS C:\> Import-Module -Name PSCO2Signal
 ```
 
 #### Get current percentage of energy with emissions for the 'westeurope' Azure region:
 
-```powershell
+```console
 PS C:\> Get-CO2SignalForAzureRegion -Region westeurope -AuthToken $token
 
 Region               : westeurope
@@ -38,7 +38,7 @@ Timestamp            : 3/26/2023 8:00:00 AM
 
 #### Determine the lowest emissions for the list of northeurope, westeurope, francecentral and uksouth Azure regions:
 
-```powershell
+```console
 PS C:\> Get-CO2SignalBestAzureRegion -Regions westeurope,uksouth,northeurope,francecentral -AuthToken $token
 
 Region               : westeurope

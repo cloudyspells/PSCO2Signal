@@ -4,12 +4,16 @@ on:
   release:
     types:
       - "published"
+    name: 'v*.*.*'
   workflow_dispatch:
 
 name: Publish Module to PSGallery
 
 jobs:
-  publish:
+  publish-prod:
+    environment:
+      name: prod-PSGallery
+      url: 'https://www.powershellgallery.com/packages/PSCO2Signal/${{ github.ref_name }}.0'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -20,6 +24,15 @@ jobs:
         run: |
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module Az.Resources
+
+      - name: Update Module Manifest
+        shell: pwsh
+        run: |
+          $version = "$(env:GITHUB_REF_NAME).0" -replace "v",""
+          Update-ModuleManifest -Path ./src/PSCO2Signal/PSCO2Signal.psd1 `
+          -ModuleVersion $version `
+          -ReleaseNotes "${{ github.event.release.url }}"
+
       - name: Publish module
         shell: pwsh
         id: publish-module

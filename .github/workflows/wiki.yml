@@ -50,6 +50,7 @@ jobs:
             -Force `
             -NoMetadata `
             -OutputFolder ./wiki/
+
       - name: Commit and push changes to wiki
         shell: bash
         working-directory: ./wiki

@@ -6,15 +6,16 @@ and an Azure CLI/PowerShell secret configured in your repo.
 
 ## Inputs
 
-- `azure_credential` - **Required** - Azure credential secret for azure/login action
+- `azure_credential` - **Required** - Azure credential secret for azure/login
+  action
 - `signal_token` - **Required** - CO2Signal API token
 - `regions` - **Required** - Comma separated list of Azure regions to check
 
 ## Outputs
 
 - `region` - The Azure region with the lowest emissions
-- `fosilFuelPercentage` - The percentage of energy in the region that is fossil fuel based
-
+- `fosilFuelPercentage` - The percentage of energy in the region that is fossil
+  fuel based
 
 ## Example
 

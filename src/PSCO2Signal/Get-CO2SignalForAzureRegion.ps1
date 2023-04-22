@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-    Get CO2 Signal value for Azure Region
+    Get CO2 Signal carbon emissions values for Azure Region
 
     .DESCRIPTION
-    Retrieves the CO2 Signal value for the specified Azure Region.
+    Retrieves the current CO2 Signal carbon emissions values for the specified Azure Region.
 
     .PARAMETER Region
     The Azure Region to get the CO2 Signal value for.
